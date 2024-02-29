@@ -2,7 +2,7 @@ repo_name: ramzimalhas/Open-Assistant
 report_id: 15ceb75cecd004d0570fb74a4290e0ec
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-23T06:59:44+00:00'
+timestamp: '2024-02-29T19:33:12+00:00'
 requested_by: yk
 provider: github
 branch: main
@@ -78,7 +78,7 @@ tools:
   last_updated_by: AlexanderHOtt
   last_updated_on: 2022-12-29 00:43:14.000000000 Z
 - name: Swift
-  description: 'An innovative new programming language for Cocoa and Cocoa Touch. '
+  description: An innovative new programming language for Cocoa and Cocoa Touch.
   website_url: https://developer.apple.com/swift/
   license: Apache-2.0
   open_source: true
@@ -129,7 +129,7 @@ tools:
   last_updated_by: Andreas Köpf
   last_updated_on: 2022-12-13 09:52:18.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 13.0.6
   open_source: true
@@ -378,7 +378,7 @@ tools:
   last_updated_by: Yannic Kilcher
   last_updated_on: 2023-01-15 17:55:49.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.3.0
   license: MIT
@@ -1031,6 +1031,18 @@ tools:
     detected_date: Nov 28
     severity: high
     first_patched: 3.9.0
+  - name: aiohttp is vulnerable to directory traversal
+    cve_id: CVE-2024-23334
+    cve_url: https://github.com/advisories/GHSA-5h86-8mv2-jq9f
+    detected_date: Jan 30
+    severity: moderate
+    first_patched: 3.9.2
+  - name: AIOHTTP has problems in HTTP parser (the python one, not llhttp)
+    cve_id: CVE-2023-47627
+    cve_url: https://github.com/advisories/GHSA-gfw2-4jvh-wgfg
+    detected_date: Nov 15
+    severity: moderate
+    first_patched: 3.8.6
   - name: aiohttp has vulnerable dependency that is vulnerable to request smuggling
     cve_id: 
     cve_url: https://github.com/advisories/GHSA-pjjw-qhg8-p2p9
@@ -1043,12 +1055,6 @@ tools:
     detected_date: Nov 28
     severity: moderate
     first_patched: 3.9.0
-  - name: AIOHTTP has problems in HTTP parser (the python one, not llhttp)
-    cve_id: CVE-2023-47627
-    cve_url: https://github.com/advisories/GHSA-gfw2-4jvh-wgfg
-    detected_date: Nov 15
-    severity: moderate
-    first_patched: 3.8.6
   - name: aiohttp.web.Application vulnerable to HTTP request smuggling via llhttp
       HTTP request parser
     cve_id: CVE-2023-37276
@@ -1056,6 +1062,13 @@ tools:
     detected_date: Jul 21
     severity: moderate
     first_patched: 3.8.5
+  - name: aiohttp's HTTP parser (the python one, not llhttp) still overly lenient
+      about separators
+    cve_id: CVE-2024-23829
+    cve_url: https://github.com/advisories/GHSA-8qpw-xqxj-h4r2
+    detected_date: Jan 30
+    severity: moderate
+    first_patched: 3.9.2
 - name: aiosqlite
   description: Asyncio bridge to the standard sqlite3 module
   package_url: https://pypi.org/project/aiosqlite
@@ -1113,12 +1126,32 @@ tools:
   last_updated_by: Keith Stevens
   last_updated_on: 2023-01-28 07:56:34.000000000 Z
   vulnerabilities:
+  - name: cryptography NULL pointer dereference with pkcs12.serialize_key_and_certificates
+      when called with a non-matching certificate and private key and an hmac_hash
+      override
+    cve_id: CVE-2024-26130
+    cve_url: https://github.com/advisories/GHSA-6vqw-3v5j-54x4
+    detected_date: Feb 22
+    severity: high
+    first_patched: 42.0.4
   - name: Vulnerable OpenSSL included in cryptography wheels
     cve_id: CVE-2023-0286
     cve_url: https://github.com/advisories/GHSA-x4qr-2fvf-3mr5
     detected_date: Feb 9
     severity: high
     first_patched: 39.0.1
+  - name: Python Cryptography package vulnerable to Bleichenbacher timing oracle attack
+    cve_id: CVE-2023-50782
+    cve_url: https://github.com/advisories/GHSA-3ww4-gg4f-jr7f
+    detected_date: Feb 6
+    severity: high
+    first_patched: 42.0.0
+  - name: cryptography vulnerable to NULL-dereference when loading PKCS7 certificates
+    cve_id: CVE-2023-49083
+    cve_url: https://github.com/advisories/GHSA-jfhm-5ghh-2f97
+    detected_date: Nov 29
+    severity: moderate
+    first_patched: 41.0.6
   - name: Cipher.update_into can corrupt memory if passed an immutable python object
       as the outbuf
     cve_id: CVE-2023-23931
@@ -1126,18 +1159,12 @@ tools:
     detected_date: Feb 8
     severity: moderate
     first_patched: 39.0.1
-  - name: cryptography vulnerable to NULL-dereference when loading PKCS7 certificates
-    cve_id: CVE-2023-49083
-    cve_url: https://github.com/advisories/GHSA-jfhm-5ghh-2f97
-    detected_date: Nov 29
+  - name: Null pointer dereference in PKCS12 parsing
+    cve_id: CVE-2024-0727
+    cve_url: https://github.com/advisories/GHSA-9v9h-cgj8-h64p
+    detected_date: Feb 17
     severity: moderate
-    first_patched: 41.0.6
-  - name: pyca/cryptography's wheels include vulnerable OpenSSL
-    cve_id: 
-    cve_url: https://github.com/advisories/GHSA-jm77-qphf-c4w8
-    detected_date: Aug 2
-    severity: low
-    first_patched: 41.0.3
+    first_patched: 42.0.2
   - name: Vulnerable OpenSSL included in cryptography wheels
     cve_id: 
     cve_url: https://github.com/advisories/GHSA-v8gr-m533-ghj9
@@ -1150,6 +1177,12 @@ tools:
     detected_date: Jun 3
     severity: low
     first_patched: 41.0.0
+  - name: pyca/cryptography's wheels include vulnerable OpenSSL
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-jm77-qphf-c4w8
+    detected_date: Aug 2
+    severity: low
+    first_patched: 41.0.3
 - name: gdown
   description: Google Drive direct download of big files
   package_url: https://pypi.org/project/gdown
